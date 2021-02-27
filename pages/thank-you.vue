@@ -8,9 +8,8 @@
 
 <script>
 export default {
-  name: 'ThankYouPage',
+  name: "ThankYouPage",
 }
 </script>
 
-<style>
-</style>
+<style></style>

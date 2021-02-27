@@ -5,9 +5,8 @@
 
 <script>
 export default {
-    name: 'IncentroSection'
+  name: "IncentroSection",
 }
 </script>
 
-<style>
-</style>
+<style></style>

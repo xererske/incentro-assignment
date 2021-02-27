@@ -66,61 +66,66 @@
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   data() {
     return {
       form: {
-        initials: '',
-        insertion: '',
-        lastName: '',
-        zipcode: '',
-        houseNumber: '',
-        streetName: '',
-        city: '',
-        email: ''
+        initials: "",
+        insertion: "",
+        lastName: "",
+        zipcode: "",
+        houseNumber: "",
+        streetName: "",
+        city: "",
+        email: "",
       },
-      locationError: false
+      locationError: false,
     }
   },
   computed: {
     errorBorder() {
-      return this.locationError ? 'border-red-500' : ''
-    }
+      return this.locationError ? "border-red-500" : ""
+    },
   },
   methods: {
     resetLocation() {
-      this.form.city = ''
-      this.form.streetName = ''
+      this.form.city = ""
+      this.form.streetName = ""
       this.locationError = true
     },
     async fetchLocation() {
       if (this.form.zipcode && this.form.houseNumber) {
         try {
           const urlParams = `${this.form.zipcode} ${this.form.houseNumber}`
-          const locationData = await this.$axios.$get(`https://photon.komoot.io/api/?q=${encodeURIComponent(urlParams)}`)
-          if (locationData.features[0].properties.city && locationData.features[0].properties.street) {
+          const locationData = await this.$axios.$get(
+            `https://photon.komoot.io/api/?q=${encodeURIComponent(urlParams)}`
+          )
+          if (
+            locationData.features[0].properties.city &&
+            locationData.features[0].properties.street
+          ) {
             this.form.city = locationData.features[0].properties.city
             this.form.streetName = locationData.features[0].properties.street
             this.locationError = false
           } else {
             this.resetLocation()
           }
-        }
-        catch(err) {
+        } catch (err) {
           this.resetLocation()
         }
       }
     },
     async sendForm(formData) {
       if (!this.locationError) {
-        const response = await this.$axios.$post("https://mockbin.com/request?sendform=true", formData)
-        this.$router.push('/thank-you')
+        const response = await this.$axios.$post(
+          "https://mockbin.com/request?sendform=true",
+          formData
+        )
+        this.$router.push("/thank-you")
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

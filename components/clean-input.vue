@@ -15,45 +15,44 @@
 
 <script>
 export default {
-    name: 'CleanInput',
-    props: {
-        type: {
-            type: String,
-            required: true
-        },
-        placeholder: {
-            type: String,
-            required: true
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
-        required: {
-            type: Boolean,
-            default: true
-        },
-        ariaLabel: {
-            type: String,
-            required: true
-        },
-        pattern: {
-            type: String,
-        },
-        value: {
-            type: [String, Number]
-        }
+  name: "CleanInput",
+  props: {
+    type: {
+      type: String,
+      required: true,
     },
-    methods: {
-        updateValue(value) {
-            this.$emit('input', value)
-        },
-        valueIsChanged() {
-            this.$emit('change')
-        }
-    }
+    placeholder: {
+      type: String,
+      required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    required: {
+      type: Boolean,
+      default: true,
+    },
+    ariaLabel: {
+      type: String,
+      required: true,
+    },
+    pattern: {
+      type: String,
+    },
+    value: {
+      type: [String, Number],
+    },
+  },
+  methods: {
+    updateValue(value) {
+      this.$emit("input", value)
+    },
+    valueIsChanged() {
+      this.$emit("change")
+    },
+  },
 }
 </script>
 
-<style>
-</style>
+<style></style>

@@ -14,7 +14,11 @@ $ yarn generate
 
 # start project
 $ yarn start
+
+# test files (not all components are covered)
+$ yarn test
 ```
+
 # incentro-assignment
 
 Live demo at: https://incentro-assignment.onrender.com/

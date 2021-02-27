@@ -5,14 +5,13 @@
 
 <script>
 export default {
-    name: 'FormGroup',
-    props: {
-        classes: {
-            type: String,
-        }
-    }
+  name: "FormGroup",
+  props: {
+    classes: {
+      type: String,
+    },
+  },
 }
 </script>
 
-<style>
-</style>
+<style></style>

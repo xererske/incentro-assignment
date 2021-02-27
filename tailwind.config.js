@@ -1,3 +1,3 @@
 module.exports = {
-  separator: '_',
+  separator: "_",
 }

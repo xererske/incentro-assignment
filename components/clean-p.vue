@@ -4,12 +4,12 @@
 
 <script>
 export default {
-    name: 'CleanP',
-    props: {
-        text: {
-            type: String,
-            required: true
-        }
-    }
+  name: "CleanP",
+  props: {
+    text: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
