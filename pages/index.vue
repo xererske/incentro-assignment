@@ -5,7 +5,7 @@
       p Check hier de opdracht van Maarten
     incentro-section
       form
-        p Meld je hier aan
+        clean-p(text='Meld je hier aan')
         form-group
           clean-input(
             type="text"
@@ -24,7 +24,7 @@
             placeholder="Achternaam"
             v-model="form.lastName"
           )
-        p Waar woon je?
+        clean-p(text='Waar woon je?')
         form-group
           input.flex-auto.block.w-full.border.border-gray-600.rounded-md.px-2.py-1.mx-2(
             type="text" 
@@ -33,18 +33,18 @@
             pattern="^[1-9][0-9]{3} ?(([a-z]{2})||([A-Z]{2}))$"
             v-model="form.zipcode"
             @change="fetchLocation"
-            :class="locationError ? 'border-red-500' : ''"
+            :class="errorBorder"
           )
           input.flex-auto.block.w-full.border.border-gray-600.rounded-md.px-2.py-1.mx-2(
-            type="text" 
-            placeholder="Postcode"
+            type="number" 
+            placeholder="Huisnummer"
             :required="true"
             v-model="form.houseNumber"
             @change="fetchLocation"
-            :class="locationError ? 'border-red-500' : ''"
+            :class="errorBorder"
           )
-        form-group
-          p.text-red-500.text-center(v-if='locationError') Adres niet gevonden
+        form-group(classes='justify-center')
+          clean-p.text-red-500(v-if='locationError' text='Adres niet gevonden')
         template(v-if='form.streetName && form.city && !locationError')
           form-group
             clean-input(
@@ -60,12 +60,13 @@
               v-model="form.city"
               :disabled='true'
             )
-        p Wat is je email?
+        clean-p(text='Wat is je email?')
         form-group
           clean-input(
-            type="text"
+            type="email"
             placeholder="Email"
             v-model="form.email"
+            :required="true"
           )
         button.bg-green-500.px-2.py-4.rounded Submit
 
@@ -87,6 +88,11 @@ export default {
         email: ''
       },
       locationError: false
+    }
+  },
+  computed: {
+    errorBorder() {
+      return this.locationError ? 'border-red-500' : ''
     }
   },
   methods: {
