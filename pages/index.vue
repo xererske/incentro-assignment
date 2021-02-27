@@ -1,9 +1,9 @@
 <template lang="pug">
   .container.max-w-screen-sm.px-3
-    section.my-6
+    incentro-section
       h1 Hi Incentro :)
       p Check hier de opdracht van Maarten
-    section.my-6
+    incentro-section
       form
         .flex.flex-row.mb-3
           input.flex-auto.block.w-full.border.border-gray-600.rounded-md.px-2.py-1.mx-2(type="text" placeholder="Voorletters")
