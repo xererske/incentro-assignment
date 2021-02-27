@@ -11,18 +11,21 @@
             type="text"
             placeholder="Voorletters"
             v-model="form.initials"
+            ariaLabel='Voorletters'
           )
           clean-input(
             type="text"
             placeholder="Tussenvoegsel"
             v-model="form.insertion"
             :required="false"
+            ariaLabel='Tussenvoegsel'
           )
         form-group
           clean-input(
             type="text"
             placeholder="Achternaam"
             v-model="form.lastName"
+            ariaLabel='Achternaam'
           )
         clean-p(text='Waar woon je?')
         form-group
@@ -33,6 +36,7 @@
             @change="fetchLocation"         
             v-model="form.zipcode"
             :class="errorBorder"
+            ariaLabel='Postcode'
           )
           clean-input(	          
             type="number"
@@ -40,6 +44,7 @@
             @change="fetchLocation"
             v-model="form.houseNumber"
             :class="errorBorder"
+            ariaLabel='Huisnummer'
           )
         form-group(classes='justify-center' v-if='locationError')
           clean-p.text-red-500(text='Adres niet gevonden')
@@ -53,8 +58,9 @@
             placeholder="Email"
             v-model="form.email"
             :required="true"
+            ariaLabel='Email'
           )
-        button.bg-green-500.p-3.rounded.text-white.mt-3.hover_bg-green-400 Voltooien
+        button.bg-green-500.p-3.rounded.text-white.mt-3.hover_bg-green-400.hover_text-gray-800 Voltooien
 
 </template>
 

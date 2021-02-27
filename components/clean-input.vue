@@ -9,6 +9,7 @@
         @input="updateValue($event.target.value)"
         @change="valueIsChanged()"
         :class="disabled ? 'text-gray-600' : ''"
+        :aria-label="ariaLabel"
     )
 </template>
 
@@ -31,6 +32,10 @@ export default {
         required: {
             type: Boolean,
             default: true
+        },
+        ariaLabel: {
+            type: String,
+            required: true
         },
         pattern: {
             type: String,
