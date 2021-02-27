@@ -9,6 +9,7 @@
           clean-input(
             type="text"
             placeholder="Voorletters"
+            v-model="form.firstNameLetters"
           )
           clean-input(
             type="text"
@@ -19,11 +20,29 @@
             type="text"
             placeholder="Achternaam"
           )
+        form-group
+          clean-input(
+            type="text"
+            placeholder="Postcode"
+          )
+          clean-input(
+            type="text"
+            placeholder="Huisnummer"
+          )
 
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'IndexPage',
+  data() {
+    return {
+      form: {
+        firstNameLetters: ''
+      }
+    }
+  }
+}
 </script>
 
 <style>
