@@ -33,8 +33,8 @@
             placeholder="Huisnummer"
             v-model="form.houseNumber"
           )
-
         p(v-for="item in form") {{item}}
+        button.bg-red-500.px-2.py-4.rounder(type="button" @click='fetchLocation') Click me
 
 </template>
 
@@ -49,7 +49,14 @@ export default {
         lastName: '',
         zipcode: '',
         houseNumber: ''
-      }
+      },
+      locationData: ''
+    }
+  },
+  methods: {
+    async fetchLocation() {
+      const locationData = await this.$axios.$get('https://photon.komoot.io/api/?q=5142MG%2050')
+      console.log(locationData)
     }
   }
 }
