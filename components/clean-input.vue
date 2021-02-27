@@ -4,6 +4,8 @@
         :placeholder="placeholder"
         :value="value"
         @input="updateValue($event.target.value)"
+        :disabled="disabled"
+        :class="disabled ? 'text-gray-600' : ''"
     )
 </template>
 
@@ -18,6 +20,10 @@ export default {
         placeholder: {
             type: String,
             required: true
+        },
+        disabled: {
+            type: Boolean,
+            default: false
         },
         value: {
             type: [String, Number]

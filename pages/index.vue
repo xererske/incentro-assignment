@@ -33,8 +33,27 @@
             placeholder="Huisnummer"
             v-model="form.houseNumber"
           )
-        p(v-for="item in form") {{item}}
+        form-group
+          clean-input(
+            type="text"
+            placeholder="Email"
+            v-model="form.email"
+          )
         button.bg-red-500.px-2.py-4.rounder(type="button" @click='fetchLocation') Click me
+        form-group
+          clean-input(
+            type="text"
+            placeholder="Straatnaam"
+            v-model="form.streetName"
+            :disabled='true'
+          )
+        form-group
+          clean-input(
+            type="text"
+            placeholder="City"
+            v-model="form.city"
+            :disabled='true'
+          )
 
 </template>
 
@@ -48,15 +67,19 @@ export default {
         insertion: '',
         lastName: '',
         zipcode: '',
-        houseNumber: ''
+        houseNumber: '',
+        streetName: '',
+        city: '',
+        email: ''
       },
-      locationData: ''
     }
   },
   methods: {
     async fetchLocation() {
       const locationData = await this.$axios.$get('https://photon.komoot.io/api/?q=5142MG%2050')
-      console.log(locationData)
+      this.form.city = locationData.features[0].properties.city
+      this.form.streetName = locationData.features[0].properties.street
+      console.log(locationData.features[0].properties) // 
     }
   }
 }
