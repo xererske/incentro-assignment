@@ -1,8 +1,8 @@
 <template lang="pug">
   .container.max-w-screen-sm.px-3
     incentro-section
-      h1 Hi Incentro :)
-      p Check hier de opdracht van Maarten
+      h1 Hi Incentro,
+      p Leuk dat je op mijn opdracht kijkt!
     incentro-section
       form
         clean-p(text='Meld je hier aan')
@@ -26,21 +26,19 @@
           )
         clean-p(text='Waar woon je?')
         form-group
-          input.flex-auto.block.w-full.border.border-gray-600.rounded-md.px-2.py-1.mx-2(
-            type="text" 
-            placeholder="Postcode"
-            :required="true"
+          clean-input(
+            type="text"	            
+            placeholder="Postcode"	 
             pattern="^[1-9][0-9]{3} ?(([a-z]{2})||([A-Z]{2}))$"
+            @change="fetchLocation"         
             v-model="form.zipcode"
-            @change="fetchLocation"
             :class="errorBorder"
           )
-          input.flex-auto.block.w-full.border.border-gray-600.rounded-md.px-2.py-1.mx-2(
-            type="number" 
+          clean-input(	          
+            type="number"
             placeholder="Huisnummer"
-            :required="true"
-            v-model="form.houseNumber"
             @change="fetchLocation"
+            v-model="form.houseNumber"
             :class="errorBorder"
           )
         form-group(classes='justify-center')

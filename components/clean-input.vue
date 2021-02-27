@@ -7,6 +7,7 @@
         :pattern="pattern"
         :value="value"
         @input="updateValue($event.target.value)"
+        @change="valueIsChanged()"
         :class="disabled ? 'text-gray-600' : ''"
     )
 </template>
@@ -42,6 +43,9 @@ export default {
         updateValue(value) {
             this.$emit('input', value)
         },
+        valueIsChanged() {
+            this.$emit('change')
+        }
     }
 }
 </script>

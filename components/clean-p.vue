@@ -1,5 +1,5 @@
 <template lang="pug">
-    p.mb-1 {{text}}
+    p.mb-1.font-semibold {{text}}
 </template>
 
 <script>
