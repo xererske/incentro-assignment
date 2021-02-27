@@ -15,6 +15,7 @@
             type="text"
             placeholder="Tussenvoegsel"
             v-model="form.insertion"
+            :required="false"
           )
         form-group
           clean-input(
@@ -27,6 +28,7 @@
             type="text"
             placeholder="Postcode"
             v-model="form.zipcode"
+            pattern="^[1-9][0-9]{3} ?[a-zA-Z]{2}$"
           )
           clean-input(
             type="number"
@@ -39,7 +41,7 @@
             placeholder="Email"
             v-model="form.email"
           )
-        button.bg-red-500.px-2.py-4.rounder(type="button" @click='fetchLocation') Click me
+        button.bg-red-500.px-2.py-4.rounded(type="button" @click='fetchLocation') Click me
         form-group
           clean-input(
             type="text"
@@ -54,6 +56,7 @@
             v-model="form.city"
             :disabled='true'
           )
+        button.bg-green-500.px-2.py-4.rounded Submit
 
 </template>
 

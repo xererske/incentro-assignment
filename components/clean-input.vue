@@ -2,9 +2,11 @@
     input.flex-auto.block.w-full.border.border-gray-600.rounded-md.px-2.py-1.mx-2(
         :type="type" 
         :placeholder="placeholder"
+        :disabled="disabled"
+        :required="required"
+        :pattern="pattern"
         :value="value"
         @input="updateValue($event.target.value)"
-        :disabled="disabled"
         :class="disabled ? 'text-gray-600' : ''"
     )
 </template>
@@ -24,6 +26,13 @@ export default {
         disabled: {
             type: Boolean,
             default: false
+        },
+        required: {
+            type: Boolean,
+            default: true
+        },
+        pattern: {
+            type: String,
         },
         value: {
             type: [String, Number]
