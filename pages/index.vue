@@ -9,26 +9,32 @@
           clean-input(
             type="text"
             placeholder="Voorletters"
-            v-model="form.firstNameLetters"
+            v-model="form.initials"
           )
           clean-input(
             type="text"
             placeholder="Tussenvoegsel"
+            v-model="form.insertion"
           )
         form-group
           clean-input(
             type="text"
             placeholder="Achternaam"
+            v-model="form.lastName"
           )
         form-group
           clean-input(
             type="text"
             placeholder="Postcode"
+            v-model="form.zipcode"
           )
           clean-input(
-            type="text"
+            type="number"
             placeholder="Huisnummer"
+            v-model="form.houseNumber"
           )
+
+        p(v-for="item in form") {{item}}
 
 </template>
 
@@ -38,7 +44,11 @@ export default {
   data() {
     return {
       form: {
-        firstNameLetters: ''
+        initials: '',
+        insertion: '',
+        lastName: '',
+        zipcode: '',
+        houseNumber: ''
       }
     }
   }
