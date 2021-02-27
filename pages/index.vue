@@ -1,10 +1,10 @@
 <template lang="pug">
-  .container.max-w-screen-sm.px-3
+  clean-layout
     incentro-section
-      h1 Hi Incentro,
+      h1.text-xl Hi Incentro,
       p Leuk dat je op mijn opdracht kijkt!
     incentro-section
-      form
+      form(@submit.prevent='sendForm(form)')
         clean-p(text='Meld je hier aan')
         form-group
           clean-input(
@@ -41,23 +41,11 @@
             v-model="form.houseNumber"
             :class="errorBorder"
           )
-        form-group(classes='justify-center')
-          clean-p.text-red-500(v-if='locationError' text='Adres niet gevonden')
+        form-group(classes='justify-center' v-if='locationError')
+          clean-p.text-red-500(text='Adres niet gevonden')
         template(v-if='form.streetName && form.city && !locationError')
-          form-group
-            clean-input(
-              type="text"
-              placeholder="Straatnaam"
-              v-model="form.streetName"
-              :disabled='true'
-            )
-          form-group
-            clean-input(
-              type="text"
-              placeholder="City"
-              v-model="form.city"
-              :disabled='true'
-            )
+          p {{form.streetName}}
+          p.mb-4 {{form.city}}
         clean-p(text='Wat is je email?')
         form-group
           clean-input(
@@ -66,7 +54,7 @@
             v-model="form.email"
             :required="true"
           )
-        button.bg-green-500.px-2.py-4.rounded Submit
+        button.bg-green-500.p-3.rounded.text-white.mt-3.hover_bg-green-400 Voltooien
 
 </template>
 
@@ -116,17 +104,17 @@ export default {
           this.resetLocation()
         }
       }
+    },
+    async sendForm(formData) {
+      if (!this.locationError) {
+        const response = await this.$axios.$post("https://mockbin.com/request?sendform=true", formData)
+        this.$router.push('/thank-you')
+      }
     }
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 </style>
