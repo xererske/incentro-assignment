@@ -1,9 +1,9 @@
 <template lang="pug">
   clean-layout
-    incentro-section
+    clean-section
       h1.text-xl Hi Incentro,
       p Leuk dat je op mijn opdracht kijkt!
-    incentro-section
+    clean-section
       form(@submit.prevent='sendForm(form)')
         clean-p(text='Meld je hier aan')
         form-group

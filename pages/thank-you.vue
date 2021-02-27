@@ -1,8 +1,8 @@
 <template lang="pug">
   clean-layout
-    incentro-section
+    clean-section
       h1.text-xl.mb-3 We hebben je gegevens succesvol ontvangen!
-      p Tot dinsdag :)
+      p Tot maandag :)
 
 </template>
 

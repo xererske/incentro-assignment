@@ -1,5 +1,5 @@
 <template functional lang="pug">
-    section.my-6
+    section.py-6
         slot
 </template>
 
