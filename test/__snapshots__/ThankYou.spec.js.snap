@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly: ThankYouPage Renders correctly 1`] = `
+<clean-layout-stub>
+  <clean-section-stub>
+    <h1 class="text-xl mb-3">We hebben je gegevens succesvol ontvangen!</h1>
+    <p>Tot maandag :)</p>
+  </clean-section-stub>
+</clean-layout-stub>
+`;

@@ -17,5 +17,6 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'
-  ]
+  ],
+  snapshotSerializers: ['jest-serializer-vue'],
 }

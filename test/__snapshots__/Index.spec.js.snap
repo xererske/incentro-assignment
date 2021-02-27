@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly: IndexPage Renders correctly 1`] = `
+<clean-layout-stub>
+  <clean-section-stub>
+    <h1 class="text-xl">Hi Incentro,</h1>
+    <p>Leuk dat je op mijn opdracht kijkt!</p>
+  </clean-section-stub>
+  <clean-section-stub>
+    <form>
+      <clean-p-stub text="Meld je hier aan"></clean-p-stub>
+      <form-group-stub>
+        <clean-input-stub type="text" placeholder="Voorletters" arialabel="Voorletters" value=""></clean-input-stub>
+        <clean-input-stub type="text" placeholder="Tussenvoegsel" arialabel="Tussenvoegsel" value=""></clean-input-stub>
+      </form-group-stub>
+      <form-group-stub>
+        <clean-input-stub type="text" placeholder="Achternaam" arialabel="Achternaam" value=""></clean-input-stub>
+      </form-group-stub>
+      <clean-p-stub text="Waar woon je?"></clean-p-stub>
+      <form-group-stub>
+        <clean-input-stub type="text" placeholder="Postcode" pattern="^[1-9][0-9]{3} ?(([a-z]{2})||([A-Z]{2}))$" arialabel="Postcode" value="" class=""></clean-input-stub>
+        <clean-input-stub type="number" placeholder="Huisnummer" arialabel="Huisnummer" value="" class=""></clean-input-stub>
+      </form-group-stub>
+      <!---->
+      <!---->
+      <clean-p-stub text="Wat is je email?"></clean-p-stub>
+      <form-group-stub>
+        <clean-input-stub type="email" placeholder="Email" required="true" arialabel="Email" value=""></clean-input-stub>
+      </form-group-stub><button class="bg-green-500 p-3 rounded text-white mt-3 hover_bg-green-400 hover_text-gray-800">Voltooien</button>
+    </form>
+  </clean-section-stub>
+</clean-layout-stub>
+`;
